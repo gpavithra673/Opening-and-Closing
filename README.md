@@ -8,74 +8,55 @@ To implement Opening and Closing using Python and OpenCV.
 2. OpenCV
 ## Algorithm:
 ### Step1:
-<br>
-
-
+Import the necessary packages for implementing the code.
 ### Step2:
-<br>
-
+Create the text that you want to modify using opening and close filter.
 ### Step3:
-<br>
-
+Create the structuring element that you want to use over the image.
 ### Step4:
-<br>
-
+Apply the opening and closing operation for the original image.
 ### Step5:
-<br>
-
- 
+Show the results using imshow function from cv2.
 ## Program:
+~~~
+DEVELOPED BY:G.Pavithra
+REG NUMBER: 212221240036
 
-``` Python
 # Import the necessary packages
 
-
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
 
 # Create the Text using cv2.putText
 
-
+img1=np.zeros((100,500),dtype='uint8')
+font=cv2.FONT_HERSHEY_COMPLEX
+im=cv2.putText(img1,' MONISHA T ',(5,70),font,2,(255),5,cv2.LINE_AA)
+plt.imshow(im)
 
 # Create the structuring element
 
-
+Kernel=cv2.getStructuringElement(cv2.MORPH_CROSS,(11,11))
 
 # Use Opening operation
 
-
+image1=cv2.morphologyEx(im,cv2.MORPH_OPEN,Kernel)
+plt.imshow(image1)
 
 
 # Use Closing Operation
 
-
-
-
-
-```
+image1=cv2.morphologyEx(im,cv2.MORPH_CLOSE,Kernel)
+plt.imshow(image1)
+~~~
 ## Output:
 
 ### Display the input Image
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
+![output](l1.png)
 ### Display the result of Opening
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
+![output](l2.png)
 ### Display the result of Closing
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
+![output](l3.png)
 ## Result
 Thus the Opening and Closing operation is used in the image using python and OpenCV.
